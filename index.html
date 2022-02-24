@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Adventure Finder</title>
+</head>
+
+<body style="background-color: orange;">
+<button onClick="startPlaying()" style="background-color: red">Play my game</button>
+<div id="timer-area"></div>
+
+<script >
+    let amountOfMinutes = 5;
+    let numberOfSecondsInMinute = 60;
+    let totalSeconds = amountOfMinutes * numberOfSecondsInMinute;
+
+    function startPlaying(){
+        alert("timer has started")
+    }
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fiveMinuteTimer() {
+        for (i=0; i < totalSeconds; i++){
+                await sleep(1000);
+                let timeLeft = totalSeconds - i
+                document.getElementById("timer-area").innerHTML = timeLeft + " seconds remaining " ;
+        }
+
+        alert(amountOfMinutes + " minutes is up");
+    }
+
+    fiveMinuteTimer();
+</script>
+</body>
+</html>
