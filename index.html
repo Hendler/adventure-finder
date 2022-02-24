@@ -1,11 +1,26 @@
 <html>
 <head>
 <title>Adventure Finder</title>
+<style type="text/css">
+    .sprite{
+        background: url('images/collection.png')  -5px -5px;
+        height: 60px;
+        width:  60px;
+
+
+    }
+
+
+
+
+
+</style>
 </head>
 
-<body style="background-color: orange;">
+<body style="background-color: orange; background-image: url('images/backgrounds/forest_one.jpg');">
 <button onClick="startPlaying()" style="background-color: red">Play my game</button>
 <div id="timer-area"></div>
+<div class="sprite"></div>
 
 <script >
     let amountOfMinutes = 5;
