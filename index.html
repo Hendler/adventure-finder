@@ -9,6 +9,7 @@
         height: 60px;
         width:  60px;
         position:absolute;
+        z-index: 10000;
     }
 
 
@@ -39,6 +40,9 @@
         for (let i = 0; i < collection.length; i++) {
           collection[i].style.left = getRandomInt(window.outerWidth) + "px"
           collection[i].style.top  = getRandomInt(window.outerHeight) + "px"
+          collection[i].onclick = function (){
+                alert("you found me");
+          }
         }
 
     }
