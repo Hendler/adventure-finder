@@ -2,12 +2,13 @@
 <head>
 <title>Adventure Finder</title>
 <style type="text/css">
+
+
     .sprite{
         background: url('images/collection.png')  -5px -5px;
         height: 60px;
         width:  60px;
-
-
+        position:absolute;
     }
 
 
@@ -23,13 +24,37 @@
 <div class="sprite"></div>
 
 <script >
+
+    let hiddenSprites = []
+    let allSprites = {}
+    allSprites["lamp"] = []
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+
+    function moveSprite() {
+        let collection = document.getElementsByClassName("sprite");
+        for (let i = 0; i < collection.length; i++) {
+          collection[i].style.left = getRandomInt(window.outerWidth) + "px"
+          collection[i].style.top  = getRandomInt(window.outerHeight) + "px"
+        }
+
+    }
+
+
+
     let amountOfMinutes = 5;
     let numberOfSecondsInMinute = 60;
     let totalSeconds = amountOfMinutes * numberOfSecondsInMinute;
 
     function startPlaying(){
-        alert("timer has started")
+        fiveMinuteTimer();
+        moveSprite()
+        alert("timer has started");
     }
+
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -44,7 +69,10 @@
         alert(amountOfMinutes + " minutes is up");
     }
 
-    fiveMinuteTimer();
+
+
+
+
 </script>
 </body>
 </html>
