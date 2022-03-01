@@ -1,6 +1,6 @@
 # Adventure Finder
 
-By Carl Hendler. Age 8
+By Carl Jaime Hendler. Age 8
 
 
 ## How to play
